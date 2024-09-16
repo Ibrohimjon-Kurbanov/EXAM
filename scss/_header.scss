@@ -1,0 +1,149 @@
+@import "./variables";
+// HEADER
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 5.7rem;
+  padding-bottom: 5.7rem;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .sitenav {
+    &__list {
+      display: flex;
+      gap: 4rem;
+    }
+    &__link {
+      color: $dark-color;
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 95%;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: -10px;
+        height: 2px;
+        width: 100%;
+        background-color: $main-color;
+        display: inline-block;
+        transform-origin: right;
+        transition: 0.4s transform;
+        transform: scaleX(0);
+        transform-origin: right;
+      }
+      &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+    }
+  }
+  .btn-hide,
+  .header__btn {
+    color: $main-color;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 95%;
+    letter-spacing: 0%;
+    padding: 1.5rem 1.7rem 1.6rem 1.8rem;
+    border: 1px solid $main-color;
+    border-radius: 8px;
+    background: transparent;
+  }
+  .header__btn:hover {
+    border: 1px solid transparent;
+    background: $main-color;
+    color: $white-color;
+  }
+  .btn-hidden {
+    display: none;
+  }
+  .header__toggle-btn {
+    display: none;
+  }
+  #menu {
+    color: $dark-color;
+    font-size: 3.8rem;
+    cursor: pointer;
+    display: none;
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 1200px) {
+  .header {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+@media (max-width: 992px) {
+  .header {
+    .container {
+      padding: 0 1.5rem;
+    }
+    .sitenav__list {
+      gap: 3rem;
+    }
+    .header__btn {
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 90%;
+      padding: 1.3rem 1.5rem 1.4rem 1.6rem;
+    }
+  }
+}
+@media (max-width: 768px) {
+}
+@media (max-width: 755px) {
+  .header {
+    .header__btn {
+      display: none;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .header {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .sitenav {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .sitenav.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .sitenav__list {
+      text-align: center;
+      padding: 4.8rem 2.4rem;
+      flex-direction: column;
+      gap: 2rem;
+      background: $dark-color;
+      .btn-hidden {
+        display: block;
+      }
+
+      .sitenav__link {
+        color: $white-color;
+      }
+    }
+    #menu {
+      display: block;
+    }
+    #menu.bx-x {
+      transform: rotate(180deg);
+    }
+    .header__toggle-btn {
+      display: block;
+    }
+  }
+}

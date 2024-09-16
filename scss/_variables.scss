@@ -1,0 +1,14 @@
+// VARIABLES
+$light-color: #bdbdbd;
+$dark-color: #292830;
+$white-color: #ffffff;
+$main-color: #ff7235;
+
+// MIXIN
+@mixin titleStyle() {
+  color: rgb(41, 40, 48);
+  font-size: 9.6rem;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
