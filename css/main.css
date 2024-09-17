@@ -500,7 +500,7 @@ template {
   border: none;
   text-decoration: none;
   list-style: none;
-  transition: all 0.4s linear;
+  transition: all 0.4s;
 }
 
 html {
@@ -981,9 +981,10 @@ img {
   letter-spacing: 0%;
   display: inline;
   align-items: center;
-  transition: all 0.4s ease-in;
+  transition: all 0.4s;
 }
 .plan .plan__btn i, .plan .plan__btn2 i {
+  transition: all 0.4s;
   color: #ff7235;
   margin-left: 1.4rem;
   font-size: 1.4rem;
@@ -1040,6 +1041,10 @@ img {
   width: 350px;
   padding: 1.6rem 2.9rem 2.5rem 2.8rem;
   margin-bottom: 2.4rem;
+}
+.slider .slider__box:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .slider .slider__box:nth-child(1) {
   border-top: 10px solid #ffbe21;
@@ -1191,6 +1196,9 @@ img {
 .footer .footer__link:not(:last-child) {
   margin-bottom: 8px;
 }
+.footer .footer__link:hover {
+  color: #ff7235;
+}
 .footer .footer__desc {
   color: #bdbdbd;
   font-size: 2rem;
@@ -1207,7 +1215,7 @@ img {
   background: #ffffff;
   border: 1px solid #292830;
   border-radius: 8px;
-  padding: 7px 6px 7px 2.3rem;
+  padding: 6px 6px 6px 2.3rem;
   margin-bottom: 1rem;
 }
 .footer .footer__form button {
@@ -1220,6 +1228,12 @@ img {
   padding: 11px 15px 11px 18px;
   border-radius: 8px;
   cursor: pointer;
+  border: 1.5px solid transparent;
+}
+.footer .footer__form button:hover {
+  background: transparent;
+  color: #ff7235;
+  border: 1px solid #ff7235;
 }
 .footer .footer__form input {
   color: #292830;
@@ -1288,6 +1302,18 @@ img {
 .footer .footer__socials svg path:hover {
   cursor: pointer;
   fill: #ff7235;
+}
+
+.animeX {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.animeX.active {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 @media (max-width: 1240px) {
